@@ -8,8 +8,8 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b, c) { //eslint-disable-line
-  var theSum = a + b + c;
+function sum(a, b) { //eslint-disable-line
+  var theSum = a + b;
   var theString = `The sum of ${a} and ${b} is ${theSum}.`;
   // console.log(theSum, theString);
   return [theSum, theString];
@@ -59,12 +59,12 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var sumString = `${a} and ${b} and ${c} sum to ${sum1}.`
   var multiplyString = `The product of ${a} and ${b} and ${c} is ${product1}.`
 
-  console.log('line 62', [sum(a, b, c)[0], multiply(a, b, c)[0], sumString, multiplyString]);
+  // console.log('line 62', [sum(a, b, c)[0], multiply(a, b, c)[0], sumString, multiplyString]);
   return [sum(a, b, c)[0], multiply(a, b, c)[0], sumString, multiplyString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -82,13 +82,17 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; 
 //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
+var firstSum = sum(sumArr[0], sumArr[1])[0];
+var finalSum = sum(firstSum, sumArr[2])[0];
+// console.log(finalSum);
+var arraySumString = `${testArray} was passed in as an array of numbers, and ${finalSum} is their sum.`; 
 
-
+return [finalSum, arraySumString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
